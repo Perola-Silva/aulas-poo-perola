@@ -7,10 +7,11 @@ class Filme
     public string $titulo;
     public string $genero;
     public int $ano;
+    public string $direcao;
 
     // Métodos: Comportamentos (funções)
     public function ehClassico()
     {
-        
+
     }
 }
