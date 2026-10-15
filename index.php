@@ -60,7 +60,10 @@ $filmes = [$filme1, $filme2, $filme3];
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
-                
+                <li>Visibilidade de propriedades: <b>public</b> e <b>private</b></li>
+                <li>Encapsulamento</li>
+                <li>Métodos <b>Getters</b> <b>para leitura</b></li>
+                <li>Métodos <b>Setters</b> <b>para escrita</b></li>
             </ul>
         </div>
 
