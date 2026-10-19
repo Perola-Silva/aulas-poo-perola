@@ -2,25 +2,17 @@
 require_once "src/Filme.php";
 
 // Criando um OBJETO ou uma INSTÂNCIA a partir da classe Filme
-$filme1 = new Filme();
-$filme1->setTitulo("De volta para o futuro");
-$filme1->setAno(1984);
-$filme1->setGenero("Ficção Científica");
+$filme1 = new Filme('De Volta Para o Futuro', 'Ficcão', 1985);
+$filme2 = new Filme('Toy Story', 'Animação', 1995);
+$filme3 = new Filme('Homem Aranha', 'Ação', 2026);
 
-$filme2 = new Filme();
-$filme2->setTitulo("Toy Story");
-$filme2->setAno(1995);
-$filme2->setGenero("Animação");
-
-$filme3 = new Filme();
-$filme3->setTitulo("O auto da Compadecida");
-$filme3->setAno(2000);
-$filme3->setGenero("Comédia");
 
 
 $filmes = [$filme1, $filme2, $filme3];
+echo '<pre>';
+var_dump($filmes);
+echo '</pre>';
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -60,10 +52,7 @@ $filmes = [$filme1, $filme2, $filme3];
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
-                <li>Visibilidade de propriedades: <b>public</b> e <b>private</b></li>
-                <li>Encapsulamento</li>
-                <li>Métodos <b>Getters</b> <b>para leitura</b></li>
-                <li>Métodos <b>Setters</b> <b>para escrita</b></li>
+                
             </ul>
         </div>
 
