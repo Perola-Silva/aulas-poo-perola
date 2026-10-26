@@ -35,13 +35,13 @@ h1 {
     line-height: 1.2;
 }
 
-.conteudos {
+.filmes, .series {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
-.card-conteudo {
+.card-filme, .card-serie {
     padding: 28px;
     background-color: #fff;
     border: 1px solid #dfe3ee;
@@ -50,19 +50,8 @@ h1 {
     box-shadow: 0 6px 20px #2430470a;
 }
 
-.filmes {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.card-filme {
-    padding: 28px;
-    background-color: #fff;
-    border: 1px solid #dfe3ee;
-    border-top: 4px solid #6554c0;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px #2430470a;
+.card-serie {
+    border-top-color: #014cee;
 }
 
 .genero {
@@ -72,14 +61,6 @@ h1 {
     color: #5145a6;
     border-radius: 20px;
     font-size: 0.85rem;
-}
-
-.mensagem-sucesso { color: green; }
-.mensagem-erro { color: red; }
-
-.resumo-envios {
-    border-top-color: black;
-    border-top-width: 8px;
 }
 
 h2 {
@@ -101,25 +82,6 @@ h2 {
     font-size: 0.85rem;
 }
 
-.tipo { color: #586378; }
-
-.preco {
-    color: #5145a6;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.tamanho {
-    color: #586378;
-    font-size: 1rem;
-    margin-top: 8px;
-}
-
-.endereco {
-    margin-top: 20px;
-}
-
-
 hr {
     margin: 24px 0;
     border: none;
@@ -139,20 +101,11 @@ hr {
 }
 
 @media (min-width: 800px) {
-    .conteudos {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .card-conteudo {
-        flex: 1 1 calc(50% - 12px);
-        min-width: 0;
-    }
-    .filmes {
+    .filmes, .series {
         flex-direction: row;
     }
 
-    .card-filme {
+    .card-filme, .card-serie {
         flex: 1;
         min-width: 0;
     }

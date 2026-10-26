@@ -1,60 +1,32 @@
 <?php
 // src/Filme.php
 
-class Filme 
-{
-    private string $titulo;
-    private string $genero;
-    private int $ano;
+// Filme é uma subclasse que HERDA da superclasse Conteudo
+class Filme extends Conteudo
+{  
+    // Propriedade específica da classe Filme
+    private int $duracao;
 
-    /* Método CONSTRUTOR: a finalidade deste método é receber dados (atraves de parametros) no momento da criação do objeto e atribui-los às propriedades. Este método NÃO possui retorno */
-    public function __construct(string $titulo, string $genero, int $ano)
+    /* Método construtor específico da subclasse Filme
+    Responsável por receber os valores no momento da criação de objeto Filme (incluindo a duração) */
+    public function __construct(string $titulo, string $genero, int $ano, int $duracao)
     {
-        // Atribuindo os valores recebidos pelos parâmetros às propriedades
-        $this->titulo = $titulo;
-        $this->genero = $genero;
-        // $this->ano = $ano;
+        /* Chamamos o construtor da superclasse (classe pai) usando
+        parent::__construct(). Isso é necessário pois estes valores
+        pertecem às propriedades da classe pai. */
+        parent::__construct($titulo, $genero, $ano);
 
-        // Podemos (ou dependendo do caso, devemos) usar os setters a traves do construtor
-        $this->setAno($ano);
+        // Já quanto à duração, fazemos a atribuição aqui mesmo (afinal, $duração é de Filme)
+        $this->duracao = $duracao;
     }
 
-    public function ehClassico(): bool
+    public function getDescricao(): string 
     {
-        return $this->ano < 2000;
+        return "O filme $this->titulo possui $this->duracao minutos de duração.";
     }
 
-    
-    public function getTitulo(): string
-    {
-        return $this->titulo;
-    }
-
-    public function getGenero(): string 
-    {
-        return $this->genero;
-    }
-
-    public function getAno(): int 
-    {
-        return $this->ano;
-    }
-
-    
-    public function setTitulo(string $titulo): void
-    {
-        $this->titulo = $titulo;
-    }
-
-    public function setGenero(string $genero): void
-    {
-        $this->genero = $genero;
-    }
-
-    public function setAno(int $ano): void
-    {
-        if($ano > 0){
-            $this->ano = $ano;
-        }
-    }
 }
+
+
+
+
