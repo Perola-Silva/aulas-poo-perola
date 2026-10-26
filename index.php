@@ -16,11 +16,15 @@ $serie2 = new Serie("Supernatural", "Suspense", 2005, 20);
 
 $series = [$serie1, $serie2];
 
-// echo "<pre>";
-// var_dump($serie1, $serie2);
-// echo "</pre>";
-
 $filmes = [$filme1, $filme2, $filme3];
+
+// Como a classe conteudo foi definida como abstrata a linha abaixo não funcionara, poia não é possivel criar objetos ou instancias diretamente à partir de classes abstratas.
+
+// $conteudo = new Conteudo('Senhor dos Anéis', 'Fantasia', 2001);
+
+// echo "<pre>";
+// var_dump($);
+// echo "</pre>";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
