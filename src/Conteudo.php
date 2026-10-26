@@ -19,6 +19,11 @@ abstract class Conteudo
         $this->setAno($ano);
     }
 
+    // Declarando um método abstrato
+    // Criamos um "contrato", uma OBRIGATORIEDADE para as subclasses. Ou seja, elas serão OBRIGADAS a implementar este métedo.
+    // OBS: não colocamos chaves, pois aqui é apenas a dclaração (ou assinatura) do método.
+    abstract public function getDescricao(): string;
+
     public function ehClassico(): bool
     {
         return $this->ano < 2000;
