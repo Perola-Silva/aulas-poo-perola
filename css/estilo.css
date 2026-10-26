@@ -35,23 +35,19 @@ h1 {
     line-height: 1.2;
 }
 
-.filmes, .series {
+.conteudos {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
-.card-filme, .card-serie {
+.card-conteudo {
     padding: 28px;
     background-color: #fff;
     border: 1px solid #dfe3ee;
     border-top: 4px solid #6554c0;
     border-radius: 12px;
     box-shadow: 0 6px 20px #2430470a;
-}
-
-.card-serie {
-    border-top-color: #014cee;
 }
 
 .genero {
@@ -101,12 +97,13 @@ hr {
 }
 
 @media (min-width: 800px) {
-    .filmes, .series {
+    .conteudos {
         flex-direction: row;
+        flex-wrap: wrap;
     }
 
-    .card-filme, .card-serie {
-        flex: 1;
+    .card-conteudo {
+        flex: 1 1 calc(50% - 12px);
         min-width: 0;
     }
 
