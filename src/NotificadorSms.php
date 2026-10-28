@@ -1,5 +1,5 @@
 <?php
-class NotificadorEmail implements Notificador
+class NotificadorSms implements Notificador
 {
     public function enviar(string $mensagem): string
     {

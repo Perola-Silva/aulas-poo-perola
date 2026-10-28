@@ -1,4 +1,12 @@
 <?php 
+require_once "src/Notificador.php";
+require_once "src/NotificadorEmail.php";
+require_once "src/NotificadorSms.php";
+
+$notificadorEmail = new NotificadorEmail();
+$notificadorSms = new NotificadorSms();
+
+$notificadores = [$notificadorEmail, $notificadorSms];
 
 // echo "<pre>";
 // var_dump($);
@@ -24,10 +32,15 @@
 
         <div class="conteudos">
 
+        <?php 
+            $conteudoDaMensagem = "Seu pedido '123abc' foi confirmado";
+            foreach($notificadores as $notificador):
+        ?>
             <article class="card-conteudo">
-
+                <h2>Notificação sobre o pedido:</h2>
+                <p><?= $notificador->enviar($conteudoDaMensagem) ?></p>
             </article>
-
+        <?php endforeach; ?>
         </div>
 
         <hr>
