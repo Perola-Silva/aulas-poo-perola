@@ -48,7 +48,11 @@ $notificadores = [$notificadorEmail, $notificadorSms];
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
-                
+                <li>Interface <b>Notificador</b> como um contrato de comportamentos (métodos)</li>
+                <li>Definição do método <b>enviar(string $mensagem): string</b> na interface</li>
+                <li>Implementação da interface de <b>implements</b> nas classes <b>NotificadorEmail</b> e <b>NotificadorSms</b></li>
+                <li>Implementação do metodo <b>enviar</b> em cada classe</li>
+                <li>Poliformismo: a mesma chamada a <b>enviar</b> utiliza a implementação de cada classe</li>
             </ul>
         </div>
 
