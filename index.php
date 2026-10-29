@@ -37,26 +37,12 @@ $emailPedido3 = $notificadorEmail->enviar('Seu pedido 456asd foi confirmado');
         <header>
             <p class="destaque">Loja virtual</p>
             <h1>Notificações da loja virtual</h1>
-            <p>Simulação de notificações sobre pedidos por e-mail e SMS</p>
+            <p>Cada pedido possui um status</p>
         </header>
 
         <div class="conteudos">
             <article class="card-conteudo">
-                <h2>Notificação: Pedido 123abc</h2>
-                <p><?= $emailPedido1 ?></p>
-                <p><?= $smsPedido1 ?></p>
-            </article>
-
-            <article class="card-conteudo">
-                <h2>Notificação: Pedido 789xyz</h2>
-                <p><?= $emailPedido2 ?></p>
-                <p></p>
-            </article>
-
-            <article class="card-conteudo">
-                <h2>Notificação: Pedido 456asd</h2>
-                <p><?= $emailPedido3 ?></p>
-                <p></p>
+                
             </article>
         </div>
 
@@ -75,10 +61,7 @@ $emailPedido3 = $notificadorEmail->enviar('Seu pedido 456asd foi confirmado');
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
-                <li>Propriedades estáticas usando <b>static</b></li>
-                <li>Métodos estáticos usando <b>static</b></li>
-                <li>Acesso a recursos estáticos da própria classe usando o <b>self</b></li>
-                <li>Diferença entre usar recursos estáticos e recrsos de objetos</li>
+                
             </ul>
         </div>
 
