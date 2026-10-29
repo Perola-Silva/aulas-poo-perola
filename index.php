@@ -1,25 +1,24 @@
 <?php 
+
+require_once "src/StatusPedido.php";
+require_once "src/Pedido.php";
 require_once "src/Notificador.php";
 require_once "src/NotificadorEmail.php";
 require_once "src/NotificadorSms.php";
 
 $notificadorEmail = new NotificadorEmail();
-$notificadorSms = new NotificadorSms();
 
-// Pedido 123abc
-$emailPedido1 = $notificadorEmail->enviar('Seu pedido 123abc foi confirmado');
-$smsPedido1 = $notificadorSms->enviar('Seu pedido 123abc foi confirmado');
+$pedido1 = new Pedido(1001, "Fulano da Silva", StatusPedido::Pendente);
+$pedido2 = new Pedido(1002, "Bobão da Silva", StatusPedido::Pago);
+$pedido3 = new Pedido(1003, "Abobado da Silva", StatusPedido::AguardandoPagamento);
+$pedido4 = new Pedido(1004, "Besta da Silva", StatusPedido::SaiuParaEntrega);
 
-// Pedido 789xyz
-$emailPedido2 = $notificadorEmail->enviar('Seu pedido 789xyz foi confirmado');
+$pedido3->setStatus(StatusPedido::EmPreparacao);
 
-// Pedido 456asd
-$emailPedido3 = $notificadorEmail->enviar('Seu pedido 456asd foi confirmado');
-
-
+$pedidos = [$pedido1, $pedido2, $pedido3, $pedido4];
 
 // echo "<pre>";
-// var_dump($);
+// var_dump($pedidos);
 // echo "</pre>";
 ?>
 <!DOCTYPE html>
@@ -41,9 +40,15 @@ $emailPedido3 = $notificadorEmail->enviar('Seu pedido 456asd foi confirmado');
         </header>
 
         <div class="conteudos">
+            <?php foreach($pedidos as $pedido): ?>
             <article class="card-conteudo">
-                
+                <h2>Pedido #<?= $pedido->getNumero() ?></h2>
+                <p>Cliente: <?= $pedido->getCliente() ?></p>
+                <p>Status: <b class="destaque"><?= $pedido->getStatus()->value ?></b></p>
+                <?php $mensagem = 'Seu pedido #'.$pedido->getNumero().' está com o status: '.$pedido->getStatus()->value; ?>
+                <p><small><?= $notificadorEmail->enviar($mensagem) ?></small></p>
             </article>
+            <?php endforeach; ?>
         </div>
 
         <hr>
@@ -61,7 +66,10 @@ $emailPedido3 = $notificadorEmail->enviar('Seu pedido 456asd foi confirmado');
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
-                
+                <li>Enumerações com um conjunto definido de opções usando <b>case</b></li>
+                <li>Casos associados a valores do tipo <b>string</b></li>
+                <li>Acesso a um caso com <b>StatusPedido::NomeDoCaso</b></li>
+                <li>Acesso ao valor/texto do caso com <b>->value</b></li>
             </ul>
         </div>
 
