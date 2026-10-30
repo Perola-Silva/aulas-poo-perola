@@ -2,6 +2,8 @@
 
 // Casa case representa um status permitido e possui um valor/texto associado, que você pode escrever como quiser
 
+namespace App\Pedido;
+
 enum StatusPedido: string
 {
     case Pendente = "Pendente";
