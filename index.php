@@ -7,13 +7,10 @@ use App\Pedido\StatusPedido;
 use App\Notificacoes\NotificadorEmail;
 use App\Notificacoes\NotificadorSms;
 use App\Relatorios\Pedido AS RelatorioPedido;
+use App\Saudacao;
 
-require_once "src/Pedidos/StatusPedido.php";
-require_once "src/Pedidos/Pedido.php";
-require_once "src/Notificacoes/Notificador.php";
-require_once "src/Notificacoes/NotificadorEmail.php";
-require_once "src/Notificacoes/NotificadorSms.php";
-require_once "src/Relatorios/Pedido.php";
+// Substituimos todos o requires manuais de cada arquivo (classe, interface, enum)
+require_once "vendor/autoload.php";
 
 // Desta forma, precisamos passar o nome completo da classe
 $notificadorEmail = new App\Notificacoes\NotificadorEmail();
@@ -30,6 +27,8 @@ $pedidos = [$pedido1, $pedido2, $pedido3, $pedido4];
 // Criando um objeto a partir da clsse Pedido do subnamespace Relatorios
 
 $relatorioPedido = new RelatorioPedido();
+
+$saudacao = new Saudacao();
 
 // echo "<pre>";
 // var_dump($notificadorEmail);
@@ -52,6 +51,7 @@ $relatorioPedido = new RelatorioPedido();
             <p class="destaque">Loja virtual</p>
             <h1>Notificações da loja virtual</h1>
             <p>Cada pedido possui um status</p>
+            <p>Testando a saudação: <?= $saudacao->cumprimentar() ?></p>
         </header>
 
         <div class="conteudos">
