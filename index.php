@@ -82,14 +82,14 @@ $saudacao = new Saudacao();
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
-                <li>Reorganização dos arquivos em pastas dentro de <b>src</b></li>
-                <li>Declaração do namespace e do subnamespace em cada arquivo</li>
-                <li>Utilização do nome completo de um recurso: <b>App\Pedidos\Pedido</b></li>
-                <li>Importação do namespace <b>use</b> para utilizar nomes simples</li>
-                <li>Lembrete: 
-                    <b>use</b> importa namespace;
-                    <b>require_once</b> carrega arquivos
-                </li>
+                <li><b>Composer</b>: gerenciador de dependencias para PHP; aqui utilizamos apenas o recurso de <b>autoload</b></li>
+                <li>Configuração de autoload no <b>composer.json</b></li>
+                <li><b>PSR-4</b>: diretriz que determina a relação entre namespaces e diretorios para autoload</li>
+                <li>Mapeamento do namespace <b>App\</b> para a pasta <b>src/</b></li>
+                <li>Geração do autoload na index.php usando um único <b>require_once</b> apontando para <b>vendor/autoload.php</b></li>
+                <li>Teste: criação da classe <b>Saudacao</b> com carregamento automático via autoload</li>
+                <li><b>composer install</b>: instala dependencias e gera arquivos do autoload (desde que você tenha o compose.json)</li>
+                <li>Lembrete: a past <b>vendor</b> não precisa der versionada pelo git. Por isso, a colocamos no <b>.gitignore</b></li>
             </ul>
         </div>
 
