@@ -1,12 +1,20 @@
 <?php 
 
-require_once "src/StatusPedido.php";
-require_once "src/Pedido.php";
-require_once "src/Notificador.php";
-require_once "src/NotificadorEmail.php";
-require_once "src/NotificadorSms.php";
+// Nesta forma basta indicar o uso do recurso através do namespace
 
-$notificadorEmail = new NotificadorEmail();
+use App\Pedido\Pedido;
+use App\Pedido\StatusPedido;
+use App\Notificacoes\NotificadorEmail;
+use App\Notificacoes\NotificadorSms;
+
+require_once "src/Pedidos/StatusPedido.php";
+require_once "src/Pedidos/Pedido.php";
+require_once "src/Notificacoes/Notificador.php";
+require_once "src/Notificacoes/NotificadorEmail.php";
+require_once "src/Notificacoes/NotificadorSms.php";
+
+// Desta forma, precisamos passar o nome completo da classe
+$notificadorEmail = new App\Notificacoes\NotificadorEmail();
 
 $pedido1 = new Pedido(1001, "Fulano da Silva", StatusPedido::Pendente);
 $pedido2 = new Pedido(1002, "Bobão da Silva", StatusPedido::Pago);
@@ -18,8 +26,9 @@ $pedido3->setStatus(StatusPedido::EmPreparacao);
 $pedidos = [$pedido1, $pedido2, $pedido3, $pedido4];
 
 // echo "<pre>";
-// var_dump($pedidos);
+// var_dump($notificadorEmail);
 // echo "</pre>";
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
