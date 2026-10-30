@@ -81,7 +81,14 @@ $relatorioPedido = new RelatorioPedido();
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
-                
+                <li>Reorganização dos arquivos em pastas dentro de <b>src</b></li>
+                <li>Declaração do namespace e do subnamespace em cada arquivo</li>
+                <li>Utilização do nome completo de um recurso: <b>App\Pedidos\Pedido</b></li>
+                <li>Importação do namespace <b>use</b> para utilizar nomes simples</li>
+                <li>Lembrete: 
+                    <b>use</b> importa namespace;
+                    <b>require_once</b> carrega arquivos
+                </li>
             </ul>
         </div>
 
