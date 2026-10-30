@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Pedido;
+namespace App\Pedidos;
 
 class Pedido 
 {

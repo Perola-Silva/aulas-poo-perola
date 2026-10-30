@@ -2,10 +2,11 @@
 
 // Nesta forma basta indicar o uso do recurso através do namespace
 
-use App\Pedido\Pedido;
-use App\Pedido\StatusPedido;
+
 use App\Notificacoes\NotificadorEmail;
 use App\Notificacoes\NotificadorSms;
+use App\Pedidos\Pedido;
+use App\Pedidos\StatusPedido;
 use App\Relatorios\Pedido AS RelatorioPedido;
 use App\Saudacao;
 
@@ -13,9 +14,9 @@ use App\Saudacao;
 require_once "vendor/autoload.php";
 
 // Desta forma, precisamos passar o nome completo da classe
-$notificadorEmail = new App\Notificacoes\NotificadorEmail();
+$notificadorEmail = new App\Notificacoes\NotificadorEmail;
 
-$pedido1 = new Pedido(1001, "Fulano da Silva", StatusPedido::Pendente);
+$pedido1 = new Pedido(1001, "AAAAAAAA", StatusPedido::Pendente);
 $pedido2 = new Pedido(1002, "Bobão da Silva", StatusPedido::Pago);
 $pedido3 = new Pedido(1003, "Abobado da Silva", StatusPedido::AguardandoPagamento);
 $pedido4 = new Pedido(1004, "Besta da Silva", StatusPedido::SaiuParaEntrega);

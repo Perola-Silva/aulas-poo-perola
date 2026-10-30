@@ -2,7 +2,7 @@
 
 // Casa case representa um status permitido e possui um valor/texto associado, que você pode escrever como quiser
 
-namespace App\Pedido;
+namespace App\Pedidos;
 
 enum StatusPedido: string
 {
