@@ -6,12 +6,14 @@ use App\Pedido\Pedido;
 use App\Pedido\StatusPedido;
 use App\Notificacoes\NotificadorEmail;
 use App\Notificacoes\NotificadorSms;
+use App\Relatorios\Pedido AS RelatorioPedido;
 
 require_once "src/Pedidos/StatusPedido.php";
 require_once "src/Pedidos/Pedido.php";
 require_once "src/Notificacoes/Notificador.php";
 require_once "src/Notificacoes/NotificadorEmail.php";
 require_once "src/Notificacoes/NotificadorSms.php";
+require_once "src/Relatorios/Pedido.php";
 
 // Desta forma, precisamos passar o nome completo da classe
 $notificadorEmail = new App\Notificacoes\NotificadorEmail();
@@ -24,6 +26,10 @@ $pedido4 = new Pedido(1004, "Besta da Silva", StatusPedido::SaiuParaEntrega);
 $pedido3->setStatus(StatusPedido::EmPreparacao);
 
 $pedidos = [$pedido1, $pedido2, $pedido3, $pedido4];
+
+// Criando um objeto a partir da clsse Pedido do subnamespace Relatorios
+
+$relatorioPedido = new RelatorioPedido();
 
 // echo "<pre>";
 // var_dump($notificadorEmail);
